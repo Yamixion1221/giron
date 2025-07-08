@@ -10,7 +10,6 @@ function showTab(tabId) {
   document.getElementById(tabId).style.display = "block";
 }
 
-// Dummy Register
 function register() {
   const username = document.getElementById("regUsername").value;
   const password = document.getElementById("regPassword").value;
@@ -24,7 +23,6 @@ function register() {
   }
 }
 
-// Dummy Login
 function login() {
   const username = document.getElementById("loginUsername").value;
   const password = document.getElementById("loginPassword").value;
@@ -41,14 +39,12 @@ function login() {
   }
 }
 
-// Logout
 function logout() {
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("currentUser");
   showUser();
 }
 
-// Tampilkan info user
 function showUser() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   const username = localStorage.getItem("currentUser");
@@ -60,4 +56,8 @@ function showUser() {
     document.getElementById("userInfo").style.display = "none";
   }
 }
-window.onload = showUser;
+
+window.onload = function() {
+  showUser();
+  showTab('loginTab');
+};
