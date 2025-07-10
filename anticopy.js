@@ -1,6 +1,5 @@
 document.addEventListener("contextmenu", function(e){
   e.preventDefault();
-alert("Akses shortcut ini diblokir!");
 });
 
 // Blok shortcut keyboard
@@ -12,7 +11,6 @@ document.addEventListener("keydown", function(e) {
     (e.ctrlKey && e.shiftKey && ["i", "j"].includes(e.key.toLowerCase()))
   ) {
     e.preventDefault();
-    console.log("Shortcut diblokir");
   }
 });
 
