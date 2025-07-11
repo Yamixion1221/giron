@@ -8,19 +8,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("search-loading");
   const results = document.getElementById("search-results");
 
-  // Menu toggle
+  // Hamburger
   if (hamburger && sidebarMenu) {
     hamburger.addEventListener("click", function () {
       sidebarMenu.classList.toggle("active");
     });
   }
 
-  // Search toggle
+  // Search
   if (searchBtn && searchOverlay && closeSearch) {
     searchBtn.addEventListener("click", function () {
       searchOverlay.classList.remove("hidden");
     });
-
     closeSearch.addEventListener("click", function () {
       searchOverlay.classList.add("hidden");
     });
@@ -32,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const input = this.value;
       loader.classList.remove("hidden");
       results.innerHTML = "";
-
       clearTimeout(window._searchTimer);
       window._searchTimer = setTimeout(() => {
         loader.classList.add("hidden");
